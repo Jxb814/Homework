@@ -8,8 +8,10 @@ import Pump
 
 def ReheatRankineCirlce():
     '''
-    overcool = 0
+    Solution to the example 8.6
     '''
+    
+    # Initialize
     W = 100
     condenserOverCool = 0
     condenserPressure = 0.008
@@ -58,9 +60,9 @@ def ReheatRankineCirlce():
     
     states[12].p = openHeaterPressure 
     
-    #simulate
+    # Simulate
     states[0].pt()
-    t1 = Turbine.Turbine(states[0], states[1])  #前一个是文件名 后一个是文件里的类名
+    t1 = Turbine.Turbine(states[0], states[1])  
 
 
     t1.simulate()
@@ -100,13 +102,13 @@ def ReheatRankineCirlce():
     
     states[11].px()
     
-    states[12].h = states[11].h    #饱和水节流
+    states[12].h = states[11].h    #Saturated water throttle, enthalpy unchanged
     states[12].ph()
     
     b2 = Boiler.Boiler(states[10],states[0])
     b2.simulate()
     
-    # results
+    # Results
     for i in range(13):
         table.append([i+1, states[i].h, states[i].s, states[i].p, states[i].t] )
     print(tabulate(table, headers=["State", "Enthalpy", "Etropy", "Pressure", "Temperature"]))
@@ -120,11 +122,11 @@ def ReheatRankineCirlce():
     
     efficiency = output / input
     
-    m = W * 1000000 * 3600 / (1000 * 1000 * output)
+    m = W * 1000000 * 3600 / (1000 * output)
     
     print('\n', "y1 = ",y1, ", y2 = ", y2)
     print('\n',"Efficiency = ", efficiency)
-    print('\n',"MassFlow = ", m, "t/h")
+    print('\n',"MassFlow = ", m, "kg/h")
    
     
 if __name__ == '__main__':
