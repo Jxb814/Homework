@@ -1,5 +1,5 @@
 from tabulate import tabulate
-import Feedwater
+import Node
 import Boiler
 import Turbine
 import Condenser
@@ -27,7 +27,7 @@ def ReheatRankineCirlce():
    
     states = []
     for i in range(13):
-        states.append(Feedwater.Feedwater())
+        states.append(Node.Node())
         
     states[0].p = enterPressure
     states[0].t = enterTemp

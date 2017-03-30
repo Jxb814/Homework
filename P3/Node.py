@@ -1,7 +1,7 @@
 from seuif97 import *
 
 
-class Feedwater(object):
+class Node(object):
     '''
     Initializes the feedwater quality with different conditions
     '''

@@ -1,4 +1,4 @@
-import Feedwater    
+import Node  
   
 class Turbine:
     '''
@@ -13,11 +13,11 @@ class Turbine:
         self.outlet = outlet   
     
     def simulate(self):
-        """
+        '''
         Simulates the turbine and tries to have the exit quality
         as desired. It isentropically work from the turbine until 
         the desired outlet quality is reached.
-        """
+        '''
         self.outlet.s = self.inlet.s
         self.outlet.ps()
         self.Extracth = self.inlet.h - self.outlet.h
