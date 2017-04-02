@@ -1,19 +1,18 @@
 import numpy as np
 
 
-result = []
-
 def analysis(xys):
     # Average of each list
     n = len(xys) 
+    result = []
     for i in range (n):
         result.append({'x_average':np.mean(xys[i]['x']),
                        'y_average':np.mean(xys[i]['y']),
                        'x_variance':np.var(xys[i]['x']),
                        'y_variance':np.var(xys[i]['y']),
-                       'xy_corrcoef':np.corrcoef(xys[i]['x'], xys[i]['y'])[0][1]})
-    
-
+                       'xy_corrcoef':np.corrcoef(xys[i]['x'],
+                                                 xys[i]['y'])[0][1]})
+    return result
 
 
 def linearfitData(x, y):

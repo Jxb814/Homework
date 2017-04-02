@@ -2,14 +2,17 @@ from ReadData import *
 from PrintData import *
 from Analysis import *
 
+
 filename = 'data4.xlsx'
+XYs = []
+Result = []
 
-data = readdata(filename)
+data, XYs = readdata(filename)
 
-analysis(xys)
+Result = analysis(XYs)
 
-#printdata(xys)               
-#printanalysis(xys, result)     
-printall(xys, result)
+printdata(XYs)               
+printanalysis(XYs, Result)     
 
-showfigure(xys)
+#showfigure(XYs)
+printmorefig(XYs)
