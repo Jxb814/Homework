@@ -1,16 +1,15 @@
 from ReadData import *
-import Analysis
-import LinearRegression
+from PrintData import *
+from Analysis import *
 
-readdata()
-printdata()
+filename = 'data4.xlsx'
 
-Analysis.avexy()
-Analysis.varxy()
-Analysis.corrcoefxy()
+data = readdata(filename)
 
-ans = LinearRegression.linear_model_main(x[0],y[0],10)
+analysis(xys)
 
-print(ans)
+#printdata(xys)               
+#printanalysis(xys, result)     
+printall(xys, result)
 
-LinearRegression.show_linear_line(x[3],y[3])
+showfigure(xys)
