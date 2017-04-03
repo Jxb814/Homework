@@ -80,10 +80,10 @@ def printmorefig(xys):
     '''
     fig = plt.figure(figsize = (16,7))
     n = len(xys)
-    a, b = divmod(n,2)
-    if b==0:
+    ncol, remain = divmod(n,2)
+    if remain==0:
         for i in range(n):
-            plt.subplot(2, 2, i+1)             #中间参数写a就报错？？？
+            plt.subplot(2, ncol, i+1)             
             plotData(xys[i]['x'], xys[i]['y'])
             a, b, predicted = linearfitData(xys[i]['x'], xys[i]['y'])
             plotlinearfitData(a, xys[i]['x'], predicted)
@@ -91,7 +91,7 @@ def printmorefig(xys):
             plt.title(r)       
     else:
         for i in range(n):
-            plt.subplot(2, a+1, i+1)    
+            plt.subplot(2, ncol+1, i+1)    
             plotData(xys[i]['x'], xys[i]['y'])
             a, b, predicted = linearfitData(xys[i]['x'], xys[i]['y'])
             plotlinearfitData(a, xys[i]['x'], predicted)           

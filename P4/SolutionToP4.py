@@ -14,5 +14,5 @@ Result = analysis(XYs)
 printdata(XYs)               
 printanalysis(XYs, Result)     
 
-#showfigure(XYs)
-printmorefig(XYs)
+#showfigure(XYs)            only for four groups of data
+printmorefig(XYs)           # for all 
